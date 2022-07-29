@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ci.yml'
+      - '**.dart'
+      - 'pubspec.yaml'
+    # This is needed so that workflows are not triggered by tag pushes
+    branches:
+      - '**'
+
+env:
+  FLUTTER_CHANNEL: stable
+  FLUTTER_VERSION: '3.0.5'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3.0.2
+
+      - name: setup
+        uses: subosito/flutter-action@v2.4.0
+        with:
+          channel: ${{ env.FLUTTER_CHANNEL }}
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          cache: true
+          cache-key: flutter-${{ runner.os }}
+
+      - name: test
+        run: flutter test --coverage
+
+      - name: coverage badge
+        run: |
+          flutter pub global activate flutter_coverage_badge
+          flutter pub global run flutter_coverage_badge
+
+      - name: commit
+        uses: stefanzweifel/git-auto-commit-action@v4.14.1
+        with:
+          commit_message: Update coverage badges
+
+      - name: lint
+        run: flutter analyze
+
+      - name: format
+        run: flutter format .
+
+      - name: commit
+        uses: stefanzweifel/git-auto-commit-action@v4.14.1
+        with:
+          commit_message: Apply formatting changes
