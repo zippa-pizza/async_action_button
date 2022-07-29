@@ -1,5 +1,5 @@
 name: async_action_button
-description: A new Flutter package project.
+description: A button that, when tapped, shows a loading indicator. Useful for asynchronous actions that may take some time to complete.
 
 version: 1.0.0
 
