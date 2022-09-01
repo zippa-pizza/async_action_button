@@ -4,7 +4,7 @@
 
 **BREAKING CHANGES:**
 
-- Update to `flutter_adaptive` 3.0.0
+- Update `flutter_adaptive` to version 3.0.0
 
 ## 1.0.0
 
