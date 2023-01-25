@@ -1,7 +1,7 @@
 name: async_action_button
 description: A button that, when tapped, shows a loading indicator. Useful for asynchronous actions that may take some time to complete.
 
-version: 2.0.0
+version: 3.0.0
 
 homepage: https://github.com/zippa-pizza/async_action_button
 repository: https://github.com/zippa-pizza/async_action_button
