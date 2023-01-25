@@ -7,16 +7,16 @@ homepage: https://github.com/zippa-pizza/async_action_button
 repository: https://github.com/zippa-pizza/async_action_button
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
-  flutter: ">=3.3.0"
+  sdk: ">=2.19.0 <4.0.0"
+  flutter: ">=3.7.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_adaptive: ^3.0.0
+  flutter_adaptive: ^4.0.0
   flutter_bloc: ^8.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
